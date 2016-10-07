@@ -51,10 +51,11 @@ similar distribution which contains all the required packages for ME-class.
 DEMO
 ****
 (1) Run interpolation on included example files.
-	python methylation_interpolation.py TSS -f TRUE -g ../refGene.hg19.21_12_15.txt ../example_dataset/E071_E079.bedgraph ../example_dataset/E071_E079.expr E071_E079
-	python methylation_interpolation.py TSS -f TRUE -g ../refGene.hg19.21_12_15.txt ../example_dataset/E094_E095.bedgraph ../example_dataset/E094_E095.expr E094_E095
-	python methylation_interpolation.py TSS -f TRUE -g ../refGene.hg19.21_12_15.txt ../example_dataset/E096_E097.bedgraph ../example_dataset/E096_E097.expr E096_E097
-	python methylation_interpolation.py TSS -f TRUE -g ../refGene.hg19.21_12_15.txt ../example_dataset/E095_E096.bedgraph ../example_dataset/E095_E096.expr E095_E096
+	
+    python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E071_E079.bedgraph ../example_dataset/E071_E079.expr E071_E079
+	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E094_E095.bedgraph ../example_dataset/E094_E095.expr E094_E095
+	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E096_E097.bedgraph ../example_dataset/E096_E097.expr E096_E097
+	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E095_E096.bedgraph ../example_dataset/E095_E096.expr E095_E096
 
 (2) Run classification module to perform leave-one-sample-out model for classification.
     python expression_classification.py TSS evaluate_samples.txt
