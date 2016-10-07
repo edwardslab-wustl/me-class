@@ -41,6 +41,7 @@ numpy (1.11.1)
 scipy (0.17.1)
 matplotlib (1.5.1)
 sklearn (0.17.1)
+pandas (0.18.1)
 mlpy (3.5.0)
 
 Note: To simply this process, we highly recommend installing anaconda (4.1.1) or a
