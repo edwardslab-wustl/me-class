@@ -42,6 +42,7 @@ scipy (0.17.1)
 matplotlib (1.5.1)
 sklearn (0.17.1)
 pandas (0.18.1)
+seaborn (0.7.1)
 mlpy (3.5.0)
 
 Note: To simply this process, we highly recommend installing anaconda (4.1.1) or a
@@ -53,14 +54,18 @@ DEMO
 ****
 (1) Run interpolation on included example files.
 	
-    python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E071_E079.bedgraph ../example_dataset/E071_E079.expr E071_E079
-	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E094_E095.bedgraph ../example_dataset/E094_E095.expr E094_E095
-	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E096_E097.bedgraph ../example_dataset/E096_E097.expr E096_E097
-	python methylation_interpolation.py TSS -f TRUE -g ../example_dataset/refGene.hg19.21_12_15.txt ../example_dataset/E095_E096.bedgraph ../example_dataset/E095_E096.expr E095_E096
+    cd example_dataset/
+    python ../methylation_interpolation.py TSS -f TRUE -g refGene.hg19.21_12_15.txt E071_E079.bedgraph E071_E079.expr E071_E079
+	python ../methylation_interpolation.py TSS -f TRUE -g refGene.hg19.21_12_15.txt E094_E095.bedgraph E094_E095.expr E094_E095
+	python ../methylation_interpolation.py TSS -f TRUE -g refGene.hg19.21_12_15.txt E096_E097.bedgraph E096_E097.expr E096_E097
+	python ../methylation_interpolation.py TSS -f TRUE -g refGene.hg19.21_12_15.txt E095_E096.bedgraph E095_E096.expr E095_E096
 
 (2) Run classification module to perform leave-one-sample-out model for classification.
-    python expression_classification.py TSS evaluate_samples.txt
+    python ../expression_classification.py TSS evaluation_samples.txt
 
+
+(3) Plot ROC curve and calculate accuracy versus reject rate statistics.
+    python ../calculate_performance.py demo TSS_preds.txt
 
 
 ***********
@@ -92,6 +97,10 @@ To get started with ME-Class we recommend first running the demo dataset above.
 (III) Perform classification.
     - Resulting prediction files will consist of prediction of expression change 
         along with gene information.
+
+(IV) Plot performance.
+    - Plot average ROC curve for each method over multiple samples. 
+        Also, calculate performance statistics for an accuracy versus 1-reject-rate.
 
 ************
 USEFUL NOTES

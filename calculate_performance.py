@@ -265,7 +265,8 @@ For plotting ROC for classification of gene expression based on interpolated met
     parser.add_argument('tag',help="Output tag")
     parser.add_argument('methods',nargs='+',help="1 or more lists of <sample>.<method>.pred files")
     ### Optional arguments
-    parser.add_argument('-p',"--pred_prob",dest="pred_prob",default=0.9,help="Prediction probability to use for printing box plots of accuracy and rejection rate")    
+    #parser.add_argument('-p',"--pred_prob",dest="pred_prob",default=0.9,help="Prediction probability to use for printing box plots of accuracy and rejection rate")    
+    parser.add_argument('-p',"--pred_prob",dest="pred_prob",default=0.9,help=argparse.SUPPRESS)    
     parser.add_argument('--lineWidth',help="linewidth for plots, default=4",type=int, default=4)
     parser.add_argument('--legendLoc',help="location of legend for plots, default=best",choices=["best","right"],default="best")
     parser.add_argument('--axisSpacing',help="axis offset so you can see 0 pts, 0.02 works well. default=0.0",type=float, default=0)
